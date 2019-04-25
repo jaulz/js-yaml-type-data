@@ -4,11 +4,12 @@ import yaml from 'js-yaml'
 import { sync as createDataURI } from 'datauri'
 
 export interface Options {
+  name?: string,
   relativeTo?: string
 }
 
-export default function createType({ relativeTo = process.cwd() }:Options = {}) {
-  return new yaml.Type('tag:yaml.org,2002:data', {
+export default function createType({ name = 'tag:yaml.org,2002:data', relativeTo = process.cwd() }:Options = {}) {
+  return new yaml.Type(name, {
     kind: 'scalar',
     resolve: (dataPath:string) => {
       try {
