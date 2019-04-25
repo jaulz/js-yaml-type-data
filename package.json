@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "tsc",
-    "test": "jest ./src/"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
