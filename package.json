@@ -1,0 +1,53 @@
+{
+  "name": "js-yaml-type-data",
+  "version": "1.0.0",
+  "description": "Custom type for js-yaml to include other files via data URI scheme",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaulz/js-yaml-type-data.git"
+  },
+  "keywords": [
+    "js-yaml",
+    "type",
+    "include"
+  ],
+  "author": "jaulz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaulz/js-yaml-type-data/issues"
+  },
+  "homepage": "https://github.com/jaulz/js-yaml-type-data#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^2.1.0",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "datauri": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  },
+  "husky": {
+    "hooks": {
+      "post-merge": "yarn install",
+      "post-rewrite": "yarn install",
+      "pre-commit": "pretty-quick --staged --verbose"
+    }
+  }
+}
